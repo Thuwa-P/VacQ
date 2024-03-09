@@ -48,4 +48,14 @@ HospitalSchema.virtual("appointments", {
   justOne: false,
 });
 
+//Cascade delete appointments when hospital is deleted
+HospitalSchema.pre(
+  "deleteOne",
+  { document: true, query: false },
+  async function (next) {
+    console.log(`Appointment being removed from hospital ${this._id}`);
+    await this.model("Appointment").deleteMany({ hospital: this._id });
+    next();
+  }
+);
 module.exports = mongoose.model("Hospital", HospitalSchema);
