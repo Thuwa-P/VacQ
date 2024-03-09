@@ -17,11 +17,14 @@ app.use(express.json());
 //Cookie parser
 app.use(cookieParser());
 
+//Route Files
 const hospitals = require("./routes/hospitals.js");
 const auth = require("./routes/auth.js");
+const appointments = require("./routes/appointments.js");
 
 app.use("/api/v1/hospitals", hospitals);
 app.use("/api/v1/auth", auth);
+app.use("/api/v1/appointments", appointments);
 
 const PORT = process.env.PORT || 5000;
 const server = app.listen(
