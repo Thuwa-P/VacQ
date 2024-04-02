@@ -17,6 +17,9 @@ app.use(express.json());
 //Cookie parser
 app.use(cookieParser());
 
+const cors = require("cors");
+app.use(cors());
+
 //Route Files
 const hospitals = require("./routes/hospitals.js");
 const auth = require("./routes/auth.js");
