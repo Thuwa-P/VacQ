@@ -119,12 +119,12 @@ module.exports = router;
  *     responses:
  *       200:
  *         description: The hospital descriptioned by ID
- *         contents:
+ *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Hospital'
  *       404:
- *         description: The hospital was not found 
+ *         description: The hospital was not found
  */
 /**
  * @swagger
@@ -196,5 +196,5 @@ module.exports = router;
  *       200:
  *         description: The hospital was deleted
  *       404:
- *         description: The hospital was not found 
+ *         description: The hospital was not found
  */
